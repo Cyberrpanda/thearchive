@@ -1,0 +1,826 @@
+.home-section {
+    background-color: #f5f7fa;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    padding: 11rem;
+
+    &__image{
+        flex: 1 1 300px;
+        display: flex;
+        justify-content: flex-end;
+
+        .biopic{
+        
+            .cmembers{
+                width: 100%;
+                max-width: 450px;
+                height: auto;
+            }
+      }
+        
+    }
+
+    .home-section__text,
+.home-section__image {
+  opacity: 0;
+  transform: translateX(0);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.home-section__text.animate-text {
+  opacity: 1;
+  transform: translateX(0);
+  animation: slideInLeft 1s ease forwards;
+}
+
+.home-section__image.animate-image {
+  opacity: 1;
+  transform: translateX(0);
+  animation: slideInRight 1s ease forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+}
+
+
+.facilities-section{
+    height: auto;
+    background-color: $white;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+
+    
+     
+     .cmembers{
+        width: 100%;
+        max-width: 30rem;
+        height: 25rem;
+        padding: 15px;
+        border-radius: 25px;
+        cursor: pointer;
+    }
+
+    .img-caption{
+        padding-top: 15px;
+        background-color: #f5f7fa;
+        border-radius: 6px;
+        width: 24rem;
+        height: 8rem;
+        text-align: center;
+        margin: 0 auto;
+        text-transform: uppercase;
+    }
+   
+  }
+
+.history-section{
+    background-color: $white;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    padding-top: 12.5rem;
+    padding-bottom: 5rem;
+
+    @media (max-width: 768px) {
+        padding-top: 10rem;
+        padding-bottom: 3rem;
+    }
+
+    &__image {
+        width: 100%;
+
+        .biopic {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            .cmembers {
+                width: 100%;
+                max-width: 350px;
+
+                @media (max-width: 768px) {
+                    max-width: 250px;
+                }
+
+                @media (max-width: 480px) {
+                    max-width: 220px;
+                }
+            }
+        }
+    }
+
+    &__content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+
+        @media (max-width: 768px) {
+            padding: 0 1.5rem;
+        }
+
+        @media (max-width: 480px) {
+            padding: 0 1rem;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    .content1 {
+        flex: 1 1 400px;
+        max-width: 500px;
+        padding: 2rem;
+
+        @media (max-width: 768px) {
+            flex: 0 0 auto; 
+            width: 100%; 
+            padding: 0;
+            margin-bottom: 1rem;
+
+        }
+
+        @media (max-width: 480px) {
+            max-width: 100%;
+            padding: 0; // Removed padding to eliminate excess space
+            margin-bottom: 0.5rem; // Smaller margin for mobile
+        }
+    }
+
+    .content2 {
+        flex: 1 1 400px;
+        max-width: 500px;
+        padding: 2rem;
+
+        @media (max-width: 768px) {
+            max-width: 100%;
+            padding: 1.5rem;
+            margin-top: 0; // Reduced margin
+            padding-top: 0;
+        }
+
+        @media (max-width: 480px) {
+            max-width: 100%;
+            padding: 1rem;
+            margin-top: 0; // Reduced margin
+            padding-top: 0;
+        }
+    }
+
+    .contxt {
+        font-size: $default-card-header-size;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.7;
+        text-align: left;
+
+        @media (max-width: 768px) {
+            text-align: center;
+        }
+    }
+
+    /* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 1200px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    text-align: center;
+    animation: slideUp 0.3s ease;
+}
+
+.modal-content h2 {
+    color: #263238;
+    margin-bottom: 1rem;
+    font-size: $default-header-size;
+}
+
+.modal-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: $default-font-size;
+}
+
+.modal-close-btn {
+    background-color: $green2;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    transition: background-color 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    background-color: $green;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+
+@keyframes slideInFromBottom {
+        from {
+            opacity: 0;
+            transform: translateY(60px); // Start 60px below final position
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0); // End at the final position
+        }
+    }
+
+    // 2. Set the initial state of the elements you want to animate
+    // Before the 'is-visible' class is added, they will be invisible and shifted down.
+    .card-header,
+    .history-section__container {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    
+    // 3. When the section gets the 'is-visible' class, trigger the animations
+    &.is-visible {
+        .card-header {
+            // Animation for the "Who are we ?" text
+            animation: slideInFromBottom 0.6s ease-out forwards;
+        }
+
+        .history-section__container {
+            // Animation for the image and text block container
+            animation: slideInFromBottom 0.6s ease-out forwards;
+            animation-delay: 0.3s; // THIS IS THE KEY! It starts after the first animation.
+        }
+    }
+
+}
+
+.services-section{
+   background-color: #f5f7fa;
+   height: auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   position: relative;
+   width: 100%;
+   padding-top: 7rem;
+
+
+    &__content{
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto;
+        height: auto;
+        padding: 0 2rem;
+    }
+     
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0 1.5rem;
+        padding-top: 4rem;
+    }
+
+    @media (max-width: 480px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0 1rem;
+        padding-top: 2rem;
+    }
+
+    &__group1{
+        display: flex;
+        flex-direction: row;
+        gap: 4rem;
+        margin-top: 5rem;
+        text-align: center; 
+        align-items: center;
+        justify-content: center;
+        
+        
+
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;  
+       }
+
+        @media (max-width: 480px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center; 
+            gap: 1.5rem;
+            padding-top: 1.5rem;
+        }
+    }
+
+    &__group2{
+        display: flex;
+        flex-direction: row;
+        gap: 4rem;
+        margin-top: 2rem;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+       }
+
+        @media (max-width: 480px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1.5rem;
+            padding-top: 1.5rem;
+        }
+    }
+
+    &__group3{
+        display: flex;
+        flex-direction: row;
+        gap: 4rem;
+        margin-top: 2rem;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 4rem;
+
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+       }
+
+        @media (max-width: 480px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1.5rem;
+            padding-top: 1.5rem;
+        }
+    }
+    
+    &__p1{
+        background-color: $white;
+        width: 100%;
+        max-width: 400px;
+        height: 100px;
+        border-radius: 5px;
+        box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: .2s ease-out;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem;
+        
+
+          h3{
+            padding-bottom: 8px;
+          }
+
+          div {
+            text-align: left; // ensure the text doesn't stay centered
+         }
+
+          .svg {
+            width: 100%; 
+            height: auto; 
+            max-width: 20px;
+            align-self: flex-start;
+            margin-top: 0.25rem; 
+          }
+
+    }
+
+    &__p1:hover{
+        transform: scale(1.05) translateY(-5px);
+        cursor: pointer;
+    }
+
+    &__p2{
+        background-color: $white;
+        width: 100%;
+        max-width: 400px;
+        height: 100px;
+        border-radius: 5px;
+        box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: .2s ease-out;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem;
+
+          h3{
+            padding-bottom: 8px;
+          }
+
+          div {
+            text-align: left; // ensure the text doesn't stay centered
+         }
+
+          .svg {
+            width: 100%; 
+            height: auto; 
+            max-width: 20px;
+            align-self: flex-start;
+            margin-top: 0.25rem; 
+          }
+    }
+
+    &__p2:hover{
+        transform: scale(1.05) translateY(-5px);
+        cursor: pointer;
+    }
+
+    &__p3{
+        background-color: $white;
+        width: 100%;
+        max-width: 400px;
+        height: 100px;
+        border-radius: 5px;
+        box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: .2s ease-out;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem;
+
+          h3{
+            padding-bottom: 8px;
+          }
+
+          div {
+            text-align: left; // ensure the text doesn't stay centered
+         }
+
+          .svg {
+            width: 100%; 
+            height: auto; 
+            max-width: 20px;
+            align-self: flex-start;
+            margin-top: 0.25rem; 
+          }
+    }
+
+    &__p3:hover{
+        transform: scale(1.05) translateY(-5px);
+        cursor: pointer;
+    }
+
+    &__p4{
+        background-color: $white;
+        width: 100%;
+        max-width: 400px;
+        height: 100px;
+        border-radius: 5px;
+        box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: .2s ease-out;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem;
+
+          h3{
+            padding-bottom: 8px;
+          }
+
+          div {
+            text-align: left; // ensure the text doesn't stay centered
+         }
+
+          .svg {
+            width: 100%; 
+            height: auto; 
+            max-width: 20px;
+            align-self: flex-start;
+            margin-top: 0.25rem; 
+          }
+    }
+
+    &__p4:hover{
+        transform: scale(1.05) translateY(-5px);
+        cursor: pointer;
+    }
+
+    &__p5{
+        background-color: $white;
+        width: 100%;
+        max-width: 400px;
+        height: 100px;
+        border-radius: 5px;
+        box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: .2s ease-out;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem;
+
+          h3{
+            padding-bottom: 8px;
+          }
+
+          div {
+            text-align: left; // ensure the text doesn't stay centered
+         }
+
+          .svg {
+            width: 100%; 
+            height: auto; 
+            max-width: 20px;
+            align-self: flex-start;
+            margin-top: 0.25rem; 
+          }
+    }
+
+    &__p5:hover{
+        transform: scale(1.05) translateY(-5px);
+        cursor: pointer;
+    }
+
+    &__p6{
+        background-color: $white;
+        width: 100%;
+        max-width: 400px;
+        height: 100px;
+        border-radius: 5px;
+        box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+        transition: .2s ease-out;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem;
+
+          h3{
+            padding-bottom: 8px;
+          }
+
+          div {
+            text-align: left; // ensure the text doesn't stay centered
+         }
+
+          .svg {
+            width: 100%; 
+            height: auto; 
+            max-width: 20px;
+            align-self: flex-start;
+            margin-top: 0.25rem; 
+          }
+    }
+
+    &__p6:hover{
+        transform: scale(1.05) translateY(-5px);
+        cursor: pointer;
+    }
+  
+    @keyframes slideInFromBottom {
+    from {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  // 2. Set the initial state of the elements you want to animate
+  // They start invisible and shifted down
+  .card-header,
+  .services-section__group1,
+  .services-section__group2,
+  .services-section__group3 {
+    opacity: 0;
+  }
+
+  // 3. When the section gets the 'is-visible' class, trigger the animations in sequence
+  &.is-visible {
+    .card-header {
+      animation: slideInFromBottom 0.6s ease-out forwards;
+    }
+
+    .services-section__group1 {
+      animation: slideInFromBottom 0.6s ease-out forwards;
+      animation-delay: 0.2s; // Starts after the header
+    }
+
+    .services-section__group2 {
+      animation: slideInFromBottom 0.6s ease-out forwards;
+      animation-delay: 0.4s; // Starts after group 1
+    }
+
+    .services-section__group3 {
+      animation: slideInFromBottom 0.6s ease-out forwards;
+      animation-delay: 0.6s; // Starts after group 2
+    }
+  }
+
+}
+
+.banner-section{
+   background-color: $white;
+   transition: .2s ease-in;
+   height: auto;
+   
+   
+
+   &__content{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 25rem;
+      padding: 0 2rem;
+
+       @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+            padding: 0 1.5rem;
+       }
+
+        @media (max-width: 480px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+      
+      
+      &__c1{
+          @media (max-width: 768px) {
+            padding-top: 2rem;
+          }
+
+          @media (max-width: 480px) {
+            padding-top: 2rem;
+          }
+      }
+
+      &__c2{
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         gap: 2px;
+         padding: 2rem;
+         max-width: 1000px;
+
+        .svg-container{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .svg-group{
+           transition: .2s ease-in;
+           width: 50px;
+        }
+
+        .svg-group:hover{
+            cursor: pointer;
+            transform: scaleX(1.05) translateY(-5px);
+        }
+      }
+   }
+
+   @keyframes slideInFromLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-60px); // Start off-screen to the left
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInFromRight {
+    from {
+      opacity: 0;
+      transform: translateX(60px); // Start off-screen to the right
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  // 2. Set the initial state of the elements you want to animate
+  // They start invisible and off-screen
+  &__content__c1,
+  &__content__c2 {
+    opacity: 0;
+  }
+
+  // 3. When the section gets the 'is-visible' class, trigger the animations
+  &.is-visible {
+    .banner-section__content__c1 {
+      animation: slideInFromLeft 0.8s ease-out forwards;
+    }
+
+    .banner-section__content__c2 {
+      animation: slideInFromRight 0.8s ease-out forwards;
+      animation-delay: 0.1s; // A slight delay for a nice effect
+    }
+  }
+}

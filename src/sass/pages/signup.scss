@@ -1,0 +1,211 @@
+.signup-section {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+
+  &__content1 {
+    flex: 1;
+    padding: 2rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+    padding-left: 140px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+    
+    /* --- Left Section Background --- */
+    background: radial-gradient(
+        ellipse 150% 70% at 50% 120%,
+        $arc-color 0%,
+        transparent 40%
+      ),
+      radial-gradient(ellipse at 25% 45%, $bright-green 0%, $dark-green 85%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    p {
+      color: $white;
+      text-align: left;
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      max-width: 400px;
+    }
+
+    .subtext {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      font-size: $default-font-size-2;
+      flex-wrap: wrap;
+    }
+
+    span {
+      display: block;
+      color: $white;
+    }
+  }
+
+  &__content2 {
+    flex: 1;
+    background: #f5f7fa;
+    padding: 5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+
+    /* --- Curved left edges only --- */
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+
+    &--header {
+      width: 100%;
+      max-width: 400px;
+      text-align: left;
+      margin-bottom: 2rem;
+
+      .h1 {
+        display: block;
+        font-size: $default-font-size;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .h2 {
+        display: block;
+        font-size: $default-card-size;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 100%;
+      max-width: 400px;
+
+      .input-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        input {
+          width: 100%;
+          padding: 2rem;
+          padding-left: 3rem;
+          border-radius: 5px;
+          border: none;
+          box-sizing: border-box;
+        }
+
+        .input-icon {
+          position: absolute;
+          left: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          pointer-events: none;
+          width: 20px;
+          height: 20px;
+          fill: #c2c2c2;
+        }
+      }
+
+      .formfree {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+
+        .input-wrapper {
+          flex: 1 1 45%;
+        }
+      }
+    }
+  }
+
+  /* --- Fill the curved corner areas with solid green background --- */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background: #0A2D27;
+    border-radius: 0 0 40px 0;
+    z-index: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background: #0A2D27;
+    border-radius: 0 40px 0 0;
+    z-index: 0;
+  }
+
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 1024px) {
+    &__content1 {
+      padding-left: 4rem;
+      gap: 3rem;
+    }
+    &__content2 {
+      padding: 4rem 3rem;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    &__content1 {
+      padding: 3rem 2rem;
+      text-align: center;
+      align-items: center;
+    }
+
+    &__content2 {
+      padding: 4rem 2rem;
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+    }
+
+    &::before {
+      display: none; /* Hide background extension on mobile since it's stacked */
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__content1 {
+      padding: 2rem;
+      p {
+        font-size: 2.5rem;
+      }
+    }
+
+    &__content2 {
+      padding: 3rem 1.5rem;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+
+    .formfree {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+}
