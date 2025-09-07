@@ -123,6 +123,11 @@
        @media (max-width: 768px) {
         display: block;
         margin: 2rem auto 0 auto;
+        color: black;
+       }
+
+       @media (max-width: 480px) {
+        color: black;
        }
 
 
