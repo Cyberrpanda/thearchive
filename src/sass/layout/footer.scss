@@ -3,200 +3,188 @@
   padding: 2rem;
   z-index: 10;
   height: auto;
+}
 
-  .footer {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-
-    // Mobile only changes
-    @media (max-width: 768px) {
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-    }
-  }
-
-  nav {
-    display: flex;
-    gap: 3rem;
-    flex-grow: 1;
-    justify-content: flex-end;
-    padding-right: 1.5rem;
-
-    // Mobile only changes - ADD THIS
-    @media (max-width: 768px) {
-      flex-direction: column; // ← This is the key fix!
-      align-items: center;
-      gap: 2rem;
-      padding-right: 0;
-      justify-content: center;
-      width: 100%;
-    }
-  }
-
-  // Logo Section
-  .footer-logo_section {
-    width: 50%;
-    padding-left: 40px;
-    display: flex;
+.footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  
+  // MOBILE ONLY - Stack everything vertically and center
+  @media (max-width: 640px) {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: 2rem;
+  }
+}
 
-    // Mobile only changes
-    @media (max-width: 768px) {
-      width: 100%;
-      padding-left: 0;
-      align-items: center;
-      text-align: center;
-    }
+// Navigation wrapper
+nav {
+  display: flex;
+  gap: 3rem;
+  flex-grow: 1;
+  justify-content: flex-end;
+  padding-right: 1.5rem;
+  width: 100%;
 
-    p {
-      margin-top: 0.75rem;
-      color: #fff;
-      font-size: 0.85rem;
+  // MOBILE ONLY - Stack nav items vertically and center everything
+  @media (max-width: 640px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-right: 0;
+    justify-content: center;
+  }
+}
 
-      span {
-        display: inline;
-      }
-    }
+// Logo Section
+.footer-logo_section {
+  width: 50%;
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
-    .footer_social {
-      display: flex;
-      gap: 0.75rem;
-      margin-top: 0.75rem;
+  // MOBILE ONLY - Full width and centered
+  @media (max-width: 640px) {
+    width: 100%;
+    padding-left: 0;
+    align-items: center;
+    text-align: center;
+  }
 
-      .footer_svg {
-        width: 20px;
-        height: 20px;
+  p {
+    margin-top: 0.75rem;
+    color: #fff;
+    font-size: 0.85rem;
 
-        // Mobile only changes
-        @media (max-width: 768px) {
-          width: 18px;
-          height: 18px;
-        }
-      }
-
-      a {
-        display: inline-flex;
-      }
+    span {
+      display: inline;
     }
   }
 
-  // Logo Image
-  .footer__logo {
-    max-width: 160px;
-    width: auto;
-    height: auto;
-
-    // Mobile only changes
-    @media (max-width: 768px) {
-      max-width: 140px;
-    }
-  }
-
-  // Navigation
-  nav {
+  .footer_social {
     display: flex;
-    gap: 3rem;
-    flex-grow: 1;
-    justify-content: flex-end;
-    padding-right: 1.5rem;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
 
-    // Mobile only changes
-    @media (max-width: 768px) {
-      padding-right: 0;
-      justify-content: center;
+    .footer_svg {
+      width: 20px;
+      height: 20px;
+
+      // MOBILE ONLY
+      @media (max-width: 640px) {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    a {
+      display: inline-flex;
     }
   }
+}
 
-  // Lists
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    padding-top: 50px;
+// Logo Image
+.footer__logo {
+  max-width: 160px;
+  width: auto;
+  height: auto;
 
-    // Mobile only changes
-    @media (max-width: 768px) {
-      padding-top: 0;
-    }
+  // MOBILE ONLY
+  @media (max-width: 640px) {
+    max-width: 140px;
+  }
+}
+
+// Lists
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-top: 50px;
+
+  // MOBILE ONLY - Remove top padding
+  @media (max-width: 640px) {
+    padding-top: 0;
+    text-align: center;
+  }
+}
+
+
+li {
+  padding-bottom: 8px;
+
+  a {
+    color: $green;
+    text-decoration: none;
+    font-size: 0.85rem;
+  }
+}
+
+// Search Section
+.footer_search {
+  padding-top: 50px;
+
+  // MOBILE ONLY
+  @media (max-width: 640px) {
+    padding-top: 0;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
   }
 
   h1 {
     color: #fff;
-    padding-bottom: 8px;
-    font-size: 1.1rem;
   }
+}
 
-  li {
-    padding-bottom: 8px;
+// Content Section (Company, Support, Search)
+.footer-csection {
+  width: 50%;
+  display: flex;
+  gap: 3rem;
+  justify-content: flex-end;
+  padding-right: 1.5rem;
 
-    a {
-      color: $green;
-      text-decoration: none;
-      font-size: 0.85rem;
-    }
-  }
-
-  // Search Section
-  .footer_search {
-    padding-top: 50px;
-
-    // Mobile only changes
-    @media (max-width: 768px) {
-      padding-top: 0;
-      width: 100%;
-      max-width: 280px;
-    }
-
-    h1 {
-      color: #fff;
-    }
-  }
-
-  // Content Section
-  .footer-csection {
-    width: 50%;
-    display: flex;
-    gap: 3rem;
-    justify-content: flex-end;
-    padding-right: 1.5rem;
-
-    // Mobile only changes
-    @media (max-width: 768px) {
-      width: 100%;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-      padding-right: 0;
-    }
-  }
-
-  // Search Input
-  .footer_input-wrapper {
-    background-color: #515b60;
-    border-radius: 5px;
-    padding: 6px 8px;
-    display: flex;
+  // MOBILE ONLY - Stack vertically and center
+  @media (max-width: 640px) {
+    width: 100%;
+    flex-direction: column;
     align-items: center;
+    gap: 1.5rem;
+    padding-right: 0;
+  }
+}
 
+// Search Input
+.footer_input-wrapper {
+  background-color: #515b60;
+  border-radius: 5px;
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  max-width: 280px; // Prevent over-extension
 
-    input.footer_searchbar {
-      flex: 1;
-      background: transparent;
-      border: none;
-      outline: none;
-      font-size: 0.85rem;
-      padding: 4px;
+  input.footer_searchbar {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 0.85rem;
+    padding: 4px;
+    color: #fff;
+    
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
     }
+  }
 
-    .footer_message {
-      width: 16px;
-      height: 16px;
-      margin-left: 0.5rem;
-    }
+  .footer_message {
+    width: 16px;
+    height: 16px;
+    margin-left: 0.5rem;
+    flex-shrink: 0; // Prevent icon from shrinking
   }
 }

@@ -7,12 +7,13 @@ import Message from './message';
 
 export default function Footer(){
     return(
+    <>
         <section id="footer" className="footer-section">
                    <footer className="footer">
                      <nav> 
                       <div className="footer-logo_section">
                         <Link to="/">
-                         <div className="footer__logo-box">
+                           <div className="footer__logo-box">
                            <img src="/assets/logo-removebg-preview.png" alt="" className="footer__logo"/>  
                          </div>
                        </Link>
@@ -89,5 +90,8 @@ export default function Footer(){
                      </nav>
                      </footer>
         </section>
+
+        
+      </>
     )
 }

@@ -96,6 +96,12 @@
          font-size: $default-card-size;
       }
 
+.footer_search{
+    h1{
+        color: $green;
+    }
+}
+
  .footer_social{
          display: flex;
          gap: 1rem;
@@ -107,6 +113,12 @@
          font-size: $default-card-size;
        }
   }  
+
+.footer-logo_section{
+    p{
+         color: $green;
+    }
+  }
 }
 
 .carousel-section{
